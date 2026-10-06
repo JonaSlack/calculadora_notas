@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>NotaFácil — Calculadora de notas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="#"><span class="logo">NF</span><span><b>NotaFácil</b><small>Calculadora académica</small></span></a><button class="ghost" id="resetAll">↻ Reiniciar</button></div></header>
+<main>
+<section class="hero"><div class="wrap hero-grid"><div><span class="pill">CALCULADORA DE NOTAS</span><h1>Calcula tus notas.<br><em>Planifica tu promedio.</em></h1><p>Agrega tus evaluaciones y ponderaciones. Tu promedio se actualiza automáticamente y sabrás qué nota necesitas para alcanzar tu objetivo.</p><div class="hero-tags"><span>✓ Escala 1,0–7,0</span><span>✓ Cálculo automático</span><span>✓ Guarda tus datos</span></div></div><div class="mini-card"><span>Tu promedio actual</span><strong id="heroAverage">—</strong><div class="mini-line"><i id="heroBar"></i></div><small id="heroStatus">Agrega tus evaluaciones para comenzar</small></div></div></section>
+<section class="workspace"><div class="wrap">
+<div class="topline"><div><span class="eyebrow">TU ASIGNATURA</span><h2>Evaluaciones y ponderaciones</h2></div><div class="subject"><label for="subjectName">Nombre de la asignatura</label><input id="subjectName" placeholder="Ej: Programación Web"></div></div>
+<div class="layout"><div class="panel evaluations"><div class="panel-head"><div><h3>Mis evaluaciones</h3><p>La suma de ponderaciones idealmente debe completar 100%.</p></div><button class="primary" id="addRow">＋ Agregar evaluación</button></div>
+<div class="table-head"><span>Evaluación</span><span>Nota</span><span>Ponderación</span><span>Aporte</span><span></span></div><div id="rows"></div>
+<div class="weight-box"><div><b>Ponderación utilizada</b><span id="weightMessage">Completa tus evaluaciones</span></div><strong id="weightTotal">0%</strong><div class="progress"><i id="weightBar"></i></div></div></div>
+<aside><div class="result-card"><span class="eyebrow light">RESULTADO ACTUAL</span><div class="score" id="average">—</div><div class="badge" id="statusBadge">Sin datos</div><p id="resultText">Ingresa al menos una nota y su ponderación.</p><div class="stats"><div><span>Evaluado</span><b id="evaluated">0%</b></div><div><span>Pendiente</span><b id="pending">100%</b></div></div></div>
+<div class="goal-card"><h3>¿Qué nota necesito?</h3><p>Define tu promedio final objetivo.</p><label>Nota objetivo <output id="goalOutput">4,0</output></label><input type="range" id="goal" min="4" max="7" step="0.1" value="4"><div class="needed"><span>Necesitas en lo pendiente</span><strong id="neededGrade">—</strong><small id="neededMessage">Agrega evaluaciones para calcular.</small></div></div></aside></div>
+<div class="tips"><div class="tip-icon">i</div><div><b>¿Cómo funciona?</b><p>Cada nota se multiplica por su ponderación. Si todavía no completas el 100%, mostramos tu promedio sobre lo ya evaluado y calculamos qué necesitas en el porcentaje pendiente.</p></div></div>
+</div></section></main>
+<footer><div class="wrap">NotaFácil <span>•</span> Calculadora académica <span>•</span> Los datos se guardan solo en este navegador.</div></footer>
+<script src="app.js"></script></body></html>
